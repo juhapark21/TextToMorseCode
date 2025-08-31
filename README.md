@@ -4,5 +4,9 @@ Converts text input (or .txt files) into CW. Has configurable speed, sidetone, a
 ## Installation 
 See **[this page](https://github.com/juhapark21/TextToMorseCode/raw/refs/heads/main/Installations/)** for how to install/run.  
 
+## Dependencies 
+`numpy` is required for audio data generation and `playsound` is required to play the audio file. <br>
+The system libraries used (requires no external installations) are: `configparser`, `wave`, `os`, and `sys`. 
+
 ## Misc.
 Please fill out the [feedback form](https://forms.gle/jB8wYybZxeFs3rU29) to report any bugs or give suggestions.  
