@@ -17,7 +17,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: '3.x'
+          python-version: '3.11'
       - name: Install Dependencies
         run: |
           python -m pip install --upgrade pip
@@ -25,7 +25,7 @@ jobs:
       - name: Build Executable with PyInstaller
         uses: sayyid5416/pyinstaller@v1
         with:
-          python_ver: '3.x'
+          python_ver: '3.11'
           spec: 'text_to_morse.py'
           upload_exe_with_name: 'text_to_morse_ubuntu'
           options: '--onefile --add-data="config.ini:." --add-data="test_file.txt:." --name="text_to_morse_ubuntu"'
@@ -43,7 +43,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: '3.x'
+          python-version: '3.11'
       - name: Install Dependencies
         run: |
           python -m pip install --upgrade pip
@@ -51,7 +51,7 @@ jobs:
       - name: Build Executable with PyInstaller
         uses: sayyid5416/pyinstaller@v1
         with:
-          python_ver: '3.x'
+          python_ver: '3.11'
           spec: 'text_to_morse.py'
           upload_exe_with_name: 'text_to_morse_windows'
           options: '--onefile --add-data="config.ini;." --add-data="test_file.txt;." --name="text_to_morse_windows"'
