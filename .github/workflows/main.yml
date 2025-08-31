@@ -33,7 +33,7 @@ jobs:
       - name: Upload Executable as Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: executable
+          name: text_to_morse_ubuntu
           path: dist/
 
   build_windows:
@@ -60,6 +60,6 @@ jobs:
       - name: Upload Executable as Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: executable
+          name: text_to_morse_windows
           path: dist/
 
