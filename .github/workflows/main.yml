@@ -39,7 +39,7 @@ jobs:
         options: ${{ runner.os == 'Windows' && '--onefile --add-data="config.ini;." --add-data="test_file.txt;." --name="text_to_morse_${{ runner.os }}"' || '--onefile --add-data="config.ini:." --add-data="test_file.txt:." --name="text_to_morse_${{ runner.os }}"' }}
 
     - name: Upload Executable as Artifact
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
         name: executable
         path: dist/  
