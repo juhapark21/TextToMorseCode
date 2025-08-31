@@ -1,0 +1,45 @@
+name: Build Executable with PyInstaller
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}  
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]  
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'  
+
+    - name: Install Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install playsound numpy  
+
+    - name: Build Executable with PyInstaller
+      uses: sayyid5416/pyinstaller@v1
+      with:
+        python_ver: '3.x'  
+        spec: 'text_to_morse.py'  
+        upload_exe_with_name: 'text_to_morse_${{ runner.os }}'  
+        options: ${{ runner.os == 'Windows' && '--onefile --add-data="config.ini;." --add-data="test_file.txt;." --name="text_to_morse_${{ runner.os }}"' || '--onefile --add-data="config.ini:." --add-data="test_file.txt:." --name="text_to_morse_${{ runner.os }}"' }}
+
+    - name: Upload Executable as Artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: executable
+        path: dist/  
