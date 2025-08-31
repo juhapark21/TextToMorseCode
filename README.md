@@ -1,6 +1,11 @@
 # TextToMorseCode
 Converts text input (or .txt files) into CW. Has configurable speed, sidetone, and Farnsworth timing. 
 
+
+https://github.com/user-attachments/assets/c7afeb92-8d25-4ee1-b965-f5981c2959d6
+
+
+
 ## Installation 
 See **[this page](https://github.com/juhapark21/TextToMorseCode/raw/refs/heads/main/Installations/)** for how to install/run.  
 
